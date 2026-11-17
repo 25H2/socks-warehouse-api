@@ -28,7 +28,9 @@ public class Warehouse {
             Sock sock = socks.get(i);
             if (sock.getColor().equals(cleanColor) && sock.getCottonPart() == cottonPart) {
                 if (sock.getQuantity() < quantity) {
-                    throw new IllegalArgumentException("Недостаточно носков на складе");
+                    throw new IllegalArgumentException(
+                            "Недостаточно носков на складе. Доступно: " + sock.getQuantity()
+                    );
                 }
                 int remaining = sock.getQuantity() - quantity;
                 if (remaining == 0) {
