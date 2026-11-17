@@ -77,7 +77,7 @@ public class Main {
             String color = params.get("color");
             String operation = params.get("operation");
 
-            int cottonPart = Integer.parseInt(params.get("cottonPart").trim());
+            int cottonPart = parseIntField(params.get("cottonPart"), "cottonPart");
 
             int count = warehouse.getSocksCount(color, operation, cottonPart);
             sendText(exchange, 200, String.valueOf(count));
